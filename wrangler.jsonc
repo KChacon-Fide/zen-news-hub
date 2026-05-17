@@ -1,7 +1,19 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tanstack-start-app",
-  "compatibility_date": "2025-09-24",
+  "name": "zen-news-hub",
+  "workers_dev": true,
+  "preview_urls": true,
+  "compatibility_date": "2026-05-14",
   "compatibility_flags": ["nodejs_compat"],
   "main": "src/server.ts",
+  "observability": {
+    "enabled": true,
+  },
+  "vars": {
+    "SUPABASE_URL": "https://uzzglnpxtospzcnxlabg.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_SCakC3UWyCs1fgsT2eWbPw_uSVHjWqq",
+    "VITE_SUPABASE_URL": "https://uzzglnpxtospzcnxlabg.supabase.co",
+    "VITE_SUPABASE_PUBLISHABLE_KEY": "sb_publishable_SCakC3UWyCs1fgsT2eWbPw_uSVHjWqq",
+    "VITE_SUPABASE_PROJECT_ID": "uzzglnpxtospzcnxlabg",
+  },
 }

@@ -9,20 +9,69 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VideosRouteImport } from './routes/videos'
 import { Route as TechRouteImport } from './routes/tech'
+import { Route as SearchRouteImport } from './routes/search'
 import { Route as MediaRouteImport } from './routes/media'
+import { Route as LiveRouteImport } from './routes/live'
+import { Route as EspecialesRouteImport } from './routes/especiales'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AutoresRouteImport } from './routes/autores'
+import { Route as AnunciosRouteImport } from './routes/anuncios'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SeccionSlugRouteImport } from './routes/seccion.$slug'
 import { Route as ArticuloSlugRouteImport } from './routes/articulo.$slug'
 
+const VideosRoute = VideosRouteImport.update({
+  id: '/videos',
+  path: '/videos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TechRoute = TechRouteImport.update({
   id: '/tech',
   path: '/tech',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MediaRoute = MediaRouteImport.update({
   id: '/media',
   path: '/media',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveRoute = LiveRouteImport.update({
+  id: '/live',
+  path: '/live',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EspecialesRoute = EspecialesRouteImport.update({
+  id: '/especiales',
+  path: '/especiales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AutoresRoute = AutoresRouteImport.update({
+  id: '/autores',
+  path: '/autores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnunciosRoute = AnunciosRouteImport.update({
+  id: '/anuncios',
+  path: '/anuncios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -35,6 +84,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SeccionSlugRoute = SeccionSlugRouteImport.update({
+  id: '/seccion/$slug',
+  path: '/seccion/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ArticuloSlugRoute = ArticuloSlugRouteImport.update({
   id: '/articulo/$slug',
   path: '/articulo/$slug',
@@ -44,43 +98,129 @@ const ArticuloSlugRoute = ArticuloSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/anuncios': typeof AnunciosRoute
+  '/autores': typeof AutoresRoute
+  '/contact': typeof ContactRoute
+  '/especiales': typeof EspecialesRoute
+  '/live': typeof LiveRoute
   '/media': typeof MediaRoute
+  '/search': typeof SearchRoute
   '/tech': typeof TechRoute
+  '/videos': typeof VideosRoute
   '/articulo/$slug': typeof ArticuloSlugRoute
+  '/seccion/$slug': typeof SeccionSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/anuncios': typeof AnunciosRoute
+  '/autores': typeof AutoresRoute
+  '/contact': typeof ContactRoute
+  '/especiales': typeof EspecialesRoute
+  '/live': typeof LiveRoute
   '/media': typeof MediaRoute
+  '/search': typeof SearchRoute
   '/tech': typeof TechRoute
+  '/videos': typeof VideosRoute
   '/articulo/$slug': typeof ArticuloSlugRoute
+  '/seccion/$slug': typeof SeccionSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
+  '/anuncios': typeof AnunciosRoute
+  '/autores': typeof AutoresRoute
+  '/contact': typeof ContactRoute
+  '/especiales': typeof EspecialesRoute
+  '/live': typeof LiveRoute
   '/media': typeof MediaRoute
+  '/search': typeof SearchRoute
   '/tech': typeof TechRoute
+  '/videos': typeof VideosRoute
   '/articulo/$slug': typeof ArticuloSlugRoute
+  '/seccion/$slug': typeof SeccionSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/media' | '/tech' | '/articulo/$slug'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/anuncios'
+    | '/autores'
+    | '/contact'
+    | '/especiales'
+    | '/live'
+    | '/media'
+    | '/search'
+    | '/tech'
+    | '/videos'
+    | '/articulo/$slug'
+    | '/seccion/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/media' | '/tech' | '/articulo/$slug'
-  id: '__root__' | '/' | '/about' | '/media' | '/tech' | '/articulo/$slug'
+  to:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/anuncios'
+    | '/autores'
+    | '/contact'
+    | '/especiales'
+    | '/live'
+    | '/media'
+    | '/search'
+    | '/tech'
+    | '/videos'
+    | '/articulo/$slug'
+    | '/seccion/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/anuncios'
+    | '/autores'
+    | '/contact'
+    | '/especiales'
+    | '/live'
+    | '/media'
+    | '/search'
+    | '/tech'
+    | '/videos'
+    | '/articulo/$slug'
+    | '/seccion/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
+  AnunciosRoute: typeof AnunciosRoute
+  AutoresRoute: typeof AutoresRoute
+  ContactRoute: typeof ContactRoute
+  EspecialesRoute: typeof EspecialesRoute
+  LiveRoute: typeof LiveRoute
   MediaRoute: typeof MediaRoute
+  SearchRoute: typeof SearchRoute
   TechRoute: typeof TechRoute
+  VideosRoute: typeof VideosRoute
   ArticuloSlugRoute: typeof ArticuloSlugRoute
+  SeccionSlugRoute: typeof SeccionSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/videos': {
+      id: '/videos'
+      path: '/videos'
+      fullPath: '/videos'
+      preLoaderRoute: typeof VideosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tech': {
       id: '/tech'
       path: '/tech'
@@ -88,11 +228,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TechRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/media': {
       id: '/media'
       path: '/media'
       fullPath: '/media'
       preLoaderRoute: typeof MediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live': {
+      id: '/live'
+      path: '/live'
+      fullPath: '/live'
+      preLoaderRoute: typeof LiveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/especiales': {
+      id: '/especiales'
+      path: '/especiales'
+      fullPath: '/especiales'
+      preLoaderRoute: typeof EspecialesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/autores': {
+      id: '/autores'
+      path: '/autores'
+      fullPath: '/autores'
+      preLoaderRoute: typeof AutoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anuncios': {
+      id: '/anuncios'
+      path: '/anuncios'
+      fullPath: '/anuncios'
+      preLoaderRoute: typeof AnunciosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -109,6 +298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/seccion/$slug': {
+      id: '/seccion/$slug'
+      path: '/seccion/$slug'
+      fullPath: '/seccion/$slug'
+      preLoaderRoute: typeof SeccionSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/articulo/$slug': {
       id: '/articulo/$slug'
       path: '/articulo/$slug'
@@ -122,10 +318,29 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
+  AnunciosRoute: AnunciosRoute,
+  AutoresRoute: AutoresRoute,
+  ContactRoute: ContactRoute,
+  EspecialesRoute: EspecialesRoute,
+  LiveRoute: LiveRoute,
   MediaRoute: MediaRoute,
+  SearchRoute: SearchRoute,
   TechRoute: TechRoute,
+  VideosRoute: VideosRoute,
   ArticuloSlugRoute: ArticuloSlugRoute,
+  SeccionSlugRoute: SeccionSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

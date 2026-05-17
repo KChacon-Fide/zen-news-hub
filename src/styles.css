@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap");
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -61,8 +62,8 @@
   --zen-media: oklch(0.45 0.15 20);
   --zen-tech: oklch(0.62 0.16 220);
 
-  --font-serif: 'Fraunces', 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: "Fraunces", "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 .dark {
@@ -94,21 +95,94 @@
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap');
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01","cv11";
+    font-feature-settings: "ss01", "cv11";
   }
-  h1,h2,h3,h4 { font-family: var(--font-serif); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    letter-spacing: 0;
+  }
 }
 
 .kicker {
   font-family: var(--font-sans);
   font-size: 0.7rem;
-  letter-spacing: 0.18em;
+  letter-spacing: 0;
   text-transform: uppercase;
   font-weight: 600;
+}
+
+.prose-content,
+.article-lead,
+.prose-content * {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.prose-content p,
+.prose-content blockquote,
+.prose-content li {
+  margin-block: 0.85em;
+}
+
+.prose-content h2 {
+  margin-block: 1.35em 0.45em;
+  font-size: 1.65em;
+  line-height: 1.15;
+}
+
+.prose-content h3 {
+  margin-block: 1.15em 0.4em;
+  font-size: 1.3em;
+  line-height: 1.2;
+}
+
+.prose-content blockquote {
+  border-left: 3px solid var(--color-accent);
+  padding-left: 1rem;
+  color: var(--color-muted-foreground);
+}
+
+.prose-content ul,
+.prose-content ol {
+  margin-block: 0.85em;
+  padding-left: 1.35rem;
+}
+
+.prose-content ul {
+  list-style: disc;
+}
+
+.prose-content ol {
+  list-style: decimal;
+}
+
+.prose-content img,
+.prose-content video,
+.prose-content iframe {
+  height: auto;
+  max-width: 100%;
+}
+
+.prose-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.prose-content td,
+.prose-content th {
+  border: 1px solid var(--color-border);
+  padding: 0.5rem;
 }

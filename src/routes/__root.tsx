@@ -39,9 +39,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-xl font-semibold text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -72,18 +70,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Zenith News Hub is a robust web platform for managing and publishing content across multiple distinct digital media brands." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Zenith News Hub is a robust web platform for managing and publishing content across multiple distinct digital media brands." },
+      { title: "ZEN NEWS" },
+      {
+        name: "description",
+        content:
+          "ZEN NEWS integra periodismo, tecnologia y cultura digital en ZEN MEDIA y ZEN TECH.",
+      },
+      { name: "author", content: "ZEN NEWS" },
+      { property: "og:title", content: "ZEN NEWS" },
+      { property: "og:description", content: "Plataforma editorial de ZEN MEDIA y ZEN TECH." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Zenith News Hub is a robust web platform for managing and publishing content across multiple distinct digital media brands." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4d2a90c-4b36-4886-839d-6d80b1c061c4/id-preview-17562c8a--591eeb88-10e1-4c23-8a63-d999c0d0d18a.lovable.app-1778781922646.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/d4d2a90c-4b36-4886-839d-6d80b1c061c4/id-preview-17562c8a--591eeb88-10e1-4c23-8a63-d999c0d0d18a.lovable.app-1778781922646.png" },
+      { name: "twitter:site", content: "@zennews" },
     ],
     links: [
       {
@@ -100,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>
